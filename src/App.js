@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './react.svg';
 import './App.css';
 import img1 from './img/img1.jpg';
 import img2 from './img/img2.jpg';
@@ -15,41 +15,41 @@ import img11 from './img/img11.jpg';
 import img12 from './img/img12.jpg';
 
 var img1Style = {
-    backgroundImage: "url(" + { img1 } + ")"
+    backgroundImage: `url(${img1})`
 };
 
 var img2Style = {
-    backgroundImage: "url(" + { img2 } + ")"
+    backgroundImage: `url(${img2})`
 };
 var img3Style = {
-    backgroundImage: "url(" + { img3 } + ")"
+    backgroundImage: `url(${img3})`
 };
 var img4Style = {
-    backgroundImage: "url(" + { img4 } + ")"
+    backgroundImage: `url(${img4})`
 };
 var img5Style = {
-    backgroundImage: "url(" + { img5 } + ")"
+    backgroundImage: `url(${img5})`
 };
 var img6Style = {
-    backgroundImage: "url(" + { img6 } + ")"
+    backgroundImage: `url(${img6})`
 };
 var img7Style = {
-    backgroundImage: "url(" + { img7 } + ")"
+    backgroundImage: `url(${img7})`
 };
 var img8Style = {
-    backgroundImage: "url(" + { img8 } + ")"
+    backgroundImage: `url(${img8})`
 };
 var img9Style = {
-    backgroundImage: "url(" + { img9 } + ")"
+    backgroundImage: `url(${img9})`
 };
 var img10Style = {
-    backgroundImage: "url(" + { img10 } + ")"
+    backgroundImage: `url(${img10})`
 };
 var img11Style = {
-    backgroundImage: "url(" + { img11 } + ")"
+    backgroundImage: `url(${img11})`
 };
 var img12Style = {
-    backgroundImage: "url(" + { img12 } + ")"
+    backgroundImage: `url(${img12})`
 };
 
 class App extends Component {
@@ -72,9 +72,33 @@ class App extends Component {
           <main className="container">
               <div role="img" aria-label="click item" className="click-item"
                    style={img1Style}/>
+              <div role="img" aria-label="click item" className="click-item"
+                   style={img2Style}/>
+              <div role="img" aria-label="click item" className="click-item"
+                   style={img3Style}/>
+              <div role="img" aria-label="click item" className="click-item"
+                   style={img4Style}/>
+              <div role="img" aria-label="click item" className="click-item"
+                   style={img5Style}/>
+              <div role="img" aria-label="click item" className="click-item"
+                   style={img6Style}/>
+              <div role="img" aria-label="click item" className="click-item"
+                   style={img7Style}/>
+              <div role="img" aria-label="click item" className="click-item"
+                   style={img8Style}/>
+              <div role="img" aria-label="click item" className="click-item"
+                   style={img9Style}/>
+              <div role="img" aria-label="click item" className="click-item"
+                   style={img10Style}/>
+              <div role="img" aria-label="click item" className="click-item"
+                   style={img11Style}/>
+              <div role="img" aria-label="click item" className="click-item"
+                   style={img12Style}/>
+
+
           </main>
           <footer className="footer">
-              <div className="bottom">Clicky Game! <img alt="react" src="../public/assets/img/react.svg"/></div>
+              <div className="bottom">Clicky Game! <img alt="react" src={logo}/></div>
           </footer>
       </div>
     );
