@@ -1,0 +1,19 @@
+.App-header {
+    background-color: lightskyblue;
+    background-repeat: repeat;
+    color: #5133a4;
+    min-height: 100px;
+    padding: 100px 20px;
+    padding-bottom: 10px;
+    text-align: center
+}
+
+.App-header h1 {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 4rem
+}
+
+.App-title {
+    font-size: 1.5em;
+}

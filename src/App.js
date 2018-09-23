@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import logo from './react.svg';
-import './App.css';
-import ImgCard from "./ImgCard";
+import './css/App.css';
+import ImgCard from "./components/ImgCard";
 import img1 from './img/img1.jpg';
 import img2 from './img/img2.jpg';
 import img3 from './img/img3.jpg';
@@ -14,6 +13,9 @@ import img9 from './img/img9.jpg';
 import img10 from './img/img10.jpg';
 import img11 from './img/img11.jpg';
 import img12 from './img/img12.jpg';
+import NavBar from "./components/NavBar";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 var img1Style = {
     backgroundImage: `url(${img1})`
@@ -78,7 +80,6 @@ function shuffleArray(array) {
 };
 
 
-
 class App extends Component {
 
     state = {
@@ -92,7 +93,7 @@ class App extends Component {
     handleClick = id => {
         if (this.state.clicked.indexOf(id) === -1) {
             this.handleIncrement();
-            this.setState({ clicked: this.state.clicked.concat(id) });
+            this.setState({clicked: this.state.clicked.concat(id)});
         } else {
             this.handleReset();
         }
@@ -105,10 +106,10 @@ class App extends Component {
             rightWrong: ""
         });
         if (newScore >= this.state.topScore) {
-            this.setState({ topScore: newScore });
+            this.setState({topScore: newScore});
         }
         else if (newScore === 12) {
-            this.setState({ rightWrong: "You win!" });
+            this.setState({rightWrong: "You win!"});
         }
         this.handleShuffle();
     };
@@ -125,55 +126,40 @@ class App extends Component {
 
     handleShuffle = () => {
         let shuffledArray = shuffleArray(styleArray);
-        this.setState({ styleArray: shuffledArray });
+        this.setState({styleArray: shuffledArray});
     };
 
     render() {
         return (
-            <div className="App">
-                <nav className="navbar">
-                    <ul>
-                        <li className="brand"><a href="/">Clicky Game</a></li>
-                        <li>Click an image to begin!</li>
 
-                        <li>Score: {this.state.currentScore} | Top Score: {this.state.topScore}</li>
-                        <li>{this.state.rightWrong}</li>
-                    </ul>
-                </nav>
-                <header className="App-header"><h1 className="App-title">Clicky Game!</h1><h2>Click on an image to earn
-                    points, but don't click on any
-                    more than once!</h2></header>
-                {/*<header className="App-header">*/}
-                {/*<img src={logo} className="App-logo" alt="logo" />*/}
-                {/*<h1 className="App-title">Welcome to React</h1>*/}
+            <div className="App">
+
+                <NavBar
+                    currentScore={this.state.currentScore}
+                    topScore={this.state.topScore}
+                    rightWrong={this.state.rightWrong}
+                />
+                <Header/>
+
                 <main className="container">
                     {this.state.styleArray.map(styleImage => (
-
-
-                    <ImgCard
-                        key={styleImage.id}
-                        handleClick={this.handleClick}
-                        handleIncrement={this.handleIncrement}
-                        handleReset={this.handleReset}
-                        handleShuffle={this.handleShuffle}
-                        id={styleImage.id}
-                        image={styleImage.img}
-                    />
-
-
-
+                        <ImgCard
+                            key={styleImage.id}
+                            handleClick={this.handleClick}
+                            handleIncrement={this.handleIncrement}
+                            handleReset={this.handleReset}
+                            handleShuffle={this.handleShuffle}
+                            id={styleImage.id}
+                            image={styleImage.img}
+                        />
                     ))}
-
                 </main>
 
-                <footer className="footer">
-                    <div className="bottom">Clicky Game! <img alt="react" src={logo}/></div>
-                </footer>
+                <Footer/>
             </div>
         );
     }
 }
-
 
 
 export default App;
